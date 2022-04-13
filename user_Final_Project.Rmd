@@ -1,0 +1,59 @@
+---
+title: "Your Project Title Here"
+author: |
+  | **Your name here**
+  | URP 5393 - Urban Planning Methods II - Final Project
+  | The University of Texas at San Antonio
+date: "3/8/2022"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r, echo=FALSE}
+htmltools::img(src = knitr::image_uri("imgs/urp_logo.png"), 
+               alt = 'logo', 
+               style = 'position:absolute; top:0; right:0; padding:50px;')
+```
+
+#### Abstract
+
+**100 words maximum summarizing the context, problem description, proposed solution (research question), methods and data used, main results, and relevance.**
+
+
+</br>
+
+#### Background
+
+**50-100 words maximum describing the context and the problem motivating the research question. Student must include the conceptual framework description and a diagram that illustrates it.**
+
+
+</br>
+
+#### Research question and hypothesis
+**2-3 bullet points stating the specific research question and related hypothesis to be tested.**
+
+*   RQ1:________ *[research question 1]*
+
+
+</br>
+
+#### Methodology and data: 
+
+**100-150 words maximum for a) describing the data (unit of analysis, data source, measurement units, main variables of interest, etc.), and b) explaining the choice of methods, their appropriateness to answer the hypothesis and research question. **
+
+
+</br>
+
+####	Results
+
+**3-5 bullet points summarizing the main results**
+
+
+
+</br>
+
+#### Highlights
+
+ **4 bullet points containing: a) main purpose of the study, b) main methods and data, c) main results & conclusion, d) main policy implications and future research needs.**
+
