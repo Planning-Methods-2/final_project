@@ -1,0 +1,48 @@
+---
+title: "Neighborhood Change in San Antonio, TX"
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: true
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+
+### San Antonio is one of the fastest growing cities in Texas. Between 2015 and 2020 the SA metro area added 300,000 new residents reaching a total of 2.6 million.
+
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE,results='hide'}
+source('scripts/bexar_socioeconomic.R',echo = FALSE)
+```
+```{r ,echo=FALSE, message=FALSE, warning=FALSE}
+library(leaflet)
+library(viridis)
+pal_mhv<-colorBin(palette = viridis_pal(option = "D")(5),domain = bexar_socioeconomic$estimate_mhv_20,bins = 5)
+leaflet(bexar_socioeconomic) %>%
+  addProviderTiles(provider= providers$CartoDB.Positron) %>%
+  addPolygons(fillColor = pal_mhv(bexar_socioeconomic$estimate_mhv_20),color = 'white',weight = 0.5,fillOpacity = 0.8) %>%
+  addLegend(pal = pal_mhv,values = bexar_socioeconomic$estimate_mhv_20)
+```
+
+***
+With population growth, an increased demand for land is expected which will in turn create neighborhood change pressures in more desirable locations throughout the SA metro area. The map on the left shows median home values by census tract in Bexar county:
+
+- The neighborhoods of Alamo Heights and Terrel Hills reached medium prices around 1 million dollars. This means that there are at another 50% of houses at higher prices than that in those areas.
+
+- The west east and south of San Antonio show lower relative home values
+
+- The north areas show medium and medium-high relative home values
+
+### There are two main hot-spots or clusers of home values in San Antonio. One of high values and one of low values.
+
+```{r ,echo=FALSE, message=FALSE, warning=FALSE}
+library(leaflet)
+library(viridis)
+pal_mhi<-colorBin(palette = viridis_pal(option = "C")(5),domain = bexar_socioeconomic$estimate_mhi_20,bins = 5)
+leaflet(bexar_socioeconomic) %>%
+  addProviderTiles(provider= providers$CartoDB.Positron) %>%
+  addPolygons(fillColor = pal_mhi(bexar_socioeconomic$estimate_mhi_20),color = 'white',weight = 0.5,fillOpacity = 0.8) %>%
+  addLegend(pal = pal_mhi,values = bexar_socioeconomic$estimate_mhi_20)
+```
