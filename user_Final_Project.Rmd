@@ -4,10 +4,11 @@ author: |
   | **Your name here**
   | URP 5393 - Urban Planning Methods II - Final Project
   | The University of Texas at San Antonio
-date: "3/8/2022"
+date: "`r format(Sys.time(), '%B, %Y')`"
 output: 
   html_document:
     code_folding: hide
+bibliography: references.bib 
 ---
 
 ```{r, echo=FALSE}
